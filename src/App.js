@@ -21,7 +21,6 @@ import {
 } from "@reach/combobox";
 import "@reach/combobox/styles.css";
 
-const libraries = ["places"];
 const mapContainerStyle = {
   width: "100vw",
   height: "90vh",
@@ -30,12 +29,13 @@ const center = {
   lat: 53.480759,
   lng: -2.242631,
 };
+// const libraries = ["places"];
 
 const App = () => {
-  const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
-    libraries,
-  });
+  // const { isLoaded, loadError } = useLoadScript({
+  // googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
+  // libraries,
+  // });
 
   const [markers, setMarkers] = useState([]);
   const [selected, setSelected] = useState(null);
@@ -56,8 +56,8 @@ const App = () => {
     mapRef.current = map;
   }, []);
 
-  if (loadError) return "Error loading maps";
-  if (!isLoaded) return "Loading Maps";
+  // if (loadError) return "Error loading maps";
+  // if (!isLoaded) return "Loading Maps";
 
   return (
     <div className="App">
